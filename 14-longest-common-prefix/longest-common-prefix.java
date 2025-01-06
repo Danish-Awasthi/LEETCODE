@@ -8,6 +8,6 @@ class Solution {
            if(str1.charAt(idx)==str2.charAt(idx)) idx++;
            else break;
         }
-        return str2.substring(0,idx);
+        return str1.substring(0,idx);
     }
 }
