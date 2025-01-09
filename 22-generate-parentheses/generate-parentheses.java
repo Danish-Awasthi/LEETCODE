@@ -1,19 +1,19 @@
 class Solution {
-    public void genP(int open,int close,String s,int n,List<String> res){
-        if(open==close && open+close==n*2){
-            res.add(s);
+    public void genP(int open,int close,String curr, List<String> ans,int n){
+        if(open==close && open+close==2*n){
+            ans.add(curr);
             return;
         }
         if(open<n){
-            genP(open+1,close,s+"(",n,res);
+            genP(open+1,close,curr+"(",ans,n);
         }
         if(close<open){
-            genP(open,close+1,s+")",n,res);
+             genP(open,close+1,curr+")",ans,n);
         }
     }
     public List<String> generateParenthesis(int n) {
-        List<String> res=new ArrayList<>();
-        genP(0,0,"",n,res);
-        return res;
+        List<String> ans=new ArrayList<>();
+        genP(0,0,"",ans,n);
+        return ans;
     }
 }
